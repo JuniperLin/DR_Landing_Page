@@ -28,6 +28,27 @@
   });
   window.addEventListener('mouseleave', () => { mouse.active = false; });
 
+  window.addEventListener('touchstart', e => {
+    mouse.active = true;
+    mouse.x = e.touches[0].clientX;
+    mouse.y = e.touches[0].clientY;
+    if (smooth.x === -9999 || smooth.x === -9999) {
+      smooth.x = mouse.x;
+      smooth.y = mouse.y;
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchmove', e => {
+    mouse.x = e.touches[0].clientX;
+    mouse.y = e.touches[0].clientY;
+  }, { passive: true });
+
+  window.addEventListener('touchend', () => {
+    mouse.active = false;
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
   /* ═══════════════════════════════════════════════════════
    *  Scroll-driven spread
    * ═══════════════════════════════════════════════════════ */
@@ -78,6 +99,8 @@
   const SAMPLE_R_SQ  = SAMPLE_R * SAMPLE_R;
   const LENS_INNER_SQ = LENS_INNER * LENS_INNER;
 
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
   /* ═══════════════════════════════════════════════════════
    *  Text → target positions
    * ═══════════════════════════════════════════════════════ */
@@ -85,7 +108,7 @@
   let centerX, centerY;
 
   function sampleLetter(ch, color, offsetX) {
-    const fontSize = Math.min(W * 0.28, H * 0.55);
+    const fontSize = W < H ? Math.min(W * 0.52, H * 0.35) : Math.min(W * 0.28, H * 0.55);
     const off = document.createElement('canvas');
     off.width = W; off.height = H;
     const c = off.getContext('2d');
@@ -103,7 +126,7 @@
   }
 
   function buildTargets() {
-    const fontSize = Math.min(W * 0.28, H * 0.55);
+    const fontSize = W < H ? Math.min(W * 0.52, H * 0.35) : Math.min(W * 0.28, H * 0.55);
     const m = document.createElement('canvas').getContext('2d');
     m.font = `900 ${fontSize}px Inter, sans-serif`;
     const dW = m.measureText('D').width;
@@ -287,8 +310,8 @@
       ctx.fill();
     }
 
-    /* ── Magnifier cursor (only when on the landing page) ── */
-    if (mouse.active && window.scrollY < 15) drawLens(mx, my);
+    /* ── Magnifier cursor (only when on the landing page, not a touch device, and not on mobile) ── */
+    if (mouse.active && window.scrollY < 15 && !isTouchDevice && W >= 600) drawLens(mx, my);
 
     ctx.globalAlpha = 1;
   }
