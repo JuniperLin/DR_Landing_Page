@@ -188,12 +188,34 @@
   let t = 0;
   const t0 = performance.now();
 
+  let lightProgress = 0; // 0 = dark mode, 1 = light mode
+
   function frame() {
     requestAnimationFrame(frame);
     ctx.clearRect(0, 0, W, H);
 
     const elapsed = (performance.now() - t0) * 0.001;
     t += 0.016;
+
+    /* ── Light / Dark Mode transition ── */
+    const isLightMode = document.documentElement.classList.contains('light-mode');
+    if (isLightMode) {
+      lightProgress += (1 - lightProgress) * 0.065; // ~0.8s transition speed
+    } else {
+      lightProgress += (0 - lightProgress) * 0.065;
+    }
+
+    // Smoothly mutate colors of D and R particles
+    COL_D.r = 255 - lightProgress * 235; // 255 -> 20
+    COL_D.g = 255 - lightProgress * 235; // 255 -> 20
+    COL_D.b = 255 - lightProgress * 230; // 255 -> 25
+
+    COL_R.r = 255 - lightProgress * 35;  // 255 -> 220
+    COL_R.g = 90 - lightProgress * 40;   // 90 -> 50
+    COL_R.b = 140 - lightProgress * 40;  // 140 -> 100
+
+    BATCH_STYLE[0] = BATCH_STYLE[1] = `rgb(${Math.round(COL_D.r)},${Math.round(COL_D.g)},${Math.round(COL_D.b)})`;
+    BATCH_STYLE[2] = BATCH_STYLE[3] = `rgb(${Math.round(COL_R.r)},${Math.round(COL_R.g)},${Math.round(COL_R.b)})`;
 
     /* Smooth mouse */
     if (mouse.active) {
@@ -275,8 +297,14 @@
    *  Magnifier
    * ═══════════════════════════════════════════════════════ */
   function drawLens(mx, my) {
+    const ringR = Math.round(210 - lightProgress * 190); // 210 -> 20
+    const ringG = Math.round(255 - lightProgress * 235); // 255 -> 20
+    const ringB = Math.round(0 + lightProgress * 25);    // 0 -> 25
+    const currentNeon = `rgb(${ringR},${ringG},${ringB})`;
+    const currentNeonDim = `rgba(${ringR},${ringG},${ringB},0.25)`;
+
     ctx.globalAlpha = 0.8 * (1 - scrollProgress);
-    ctx.strokeStyle = NEON;
+    ctx.strokeStyle = currentNeon;
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     ctx.arc(mx, my, LENS_OUTER, 0, 6.2832);
@@ -287,13 +315,18 @@
     ctx.arc(mx, my, LENS_INNER, 0, 6.2832);
     ctx.clip();
 
+    const lensBgR = Math.round(6 + lightProgress * 249);  // 6 -> 255
+    const lensBgG = Math.round(6 + lightProgress * 249);  // 6 -> 255
+    const lensBgB = Math.round(16 + lightProgress * 239); // 16 -> 255
     ctx.globalAlpha = 0.92;
-    ctx.fillStyle = '#060610';
+    ctx.fillStyle = `rgb(${lensBgR},${lensBgG},${lensBgB})`;
     ctx.fill();
 
     const grad = ctx.createRadialGradient(mx, my, 0, mx, my, LENS_INNER);
-    grad.addColorStop(0, 'rgba(20,20,40,0)');
-    grad.addColorStop(1, 'rgba(0,0,0,0.4)');
+    const stop1 = `rgba(${Math.round(20 + lightProgress * 220)},${Math.round(20 + lightProgress * 220)},${Math.round(40 + lightProgress * 210)},0)`;
+    const stop2 = `rgba(0,0,0,${0.4 - lightProgress * 0.34})`;
+    grad.addColorStop(0, stop1);
+    grad.addColorStop(1, stop2);
     ctx.globalAlpha = 1;
     ctx.fillStyle = grad;
     ctx.beginPath();
@@ -323,14 +356,14 @@
     ctx.restore();
 
     ctx.globalAlpha = 0.3 * (1 - scrollProgress);
-    ctx.strokeStyle = NEON_DIM;
+    ctx.strokeStyle = currentNeonDim;
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.arc(mx, my, LENS_INNER, 0, 6.2832);
     ctx.stroke();
 
     ctx.globalAlpha = 0.4 * (1 - scrollProgress);
-    ctx.fillStyle = NEON;
+    ctx.fillStyle = currentNeon;
     ctx.beginPath();
     ctx.arc(mx, my, 1.2, 0, 6.2832);
     ctx.fill();

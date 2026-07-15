@@ -12,7 +12,23 @@
 </head>
 <body>
 
-  <!-- ═══ Language Toggle ═══ -->
+  <!-- ═══ Navigation Controls (Language & Theme) ═══ -->
+  <button id="theme-toggle" aria-label="Toggle Theme">
+    <svg class="theme-icon icon-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+    <svg class="theme-icon icon-moon" viewBox="0 0 24 24">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  </button>
   <button id="lang-toggle" aria-label="Toggle Language">中 / EN</button>
 
   <!-- ═══ Fixed particle canvas (z-index 0, always behind) ═══ -->
@@ -650,17 +666,18 @@
 
   <script src="particles.js"></script>
   
-  <!-- ═══ Language Switcher Script ═══ -->
+  <!-- ═══ Navigation Controls (Language & Theme) Script ═══ -->
   <script>
     (() => {
-      const toggle = document.getElementById('lang-toggle');
+      /* Language Switcher */
+      const langToggle = document.getElementById('lang-toggle');
       
       const updateToggleText = () => {
         const isZh = document.documentElement.classList.contains('lang-zh-active');
-        toggle.textContent = isZh ? 'EN' : '繁中';
+        langToggle.textContent = isZh ? 'EN' : '繁中';
       };
 
-      toggle.addEventListener('click', () => {
+      langToggle.addEventListener('click', () => {
         const isZh = document.documentElement.classList.toggle('lang-zh-active');
         localStorage.setItem('lang-pref-zh', isZh ? 'active' : 'inactive');
         updateToggleText();
@@ -672,6 +689,20 @@
         document.documentElement.classList.add('lang-zh-active');
       }
       updateToggleText();
+
+      /* Theme Switcher */
+      const themeToggle = document.getElementById('theme-toggle');
+      
+      themeToggle.addEventListener('click', () => {
+        const isLight = document.documentElement.classList.toggle('light-mode');
+        localStorage.setItem('theme-pref-light', isLight ? 'active' : 'inactive');
+      });
+
+      // Load initial theme preference
+      const savedTheme = localStorage.getItem('theme-pref-light');
+      if (savedTheme === 'active') {
+        document.documentElement.classList.add('light-mode');
+      }
     })();
   </script>
 </body>
