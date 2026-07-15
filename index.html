@@ -12,14 +12,21 @@
 </head>
 <body>
 
+  <!-- ═══ Language Toggle ═══ -->
+  <button id="lang-toggle" aria-label="Toggle Language">中 / EN</button>
+
   <!-- ═══ Fixed particle canvas (z-index 0, always behind) ═══ -->
   <canvas id="particle-canvas"></canvas>
 
   <!-- ═══ Fixed hero overlay (fades on scroll) ═══ -->
   <div id="hero-overlay">
-    <p id="subtitle">SPRAY DRYER EQUIPMENT</p>
+    <p id="subtitle">
+      <span class="lang-en">SPRAY DRYER EQUIPMENT</span>
+      <span class="lang-zh">專業噴霧乾燥與粉體製造設備</span>
+    </p>
     <div id="scroll-hint">
-      <span>Scroll to explore</span>
+      <span class="lang-en">Scroll to explore</span>
+      <span class="lang-zh">向下滾動探索</span>
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
         <path d="M9 3L9 15M4 10L9 15L14 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -32,45 +39,78 @@
     <!-- ── About ─────────────────────────────────────── -->
     <section id="about" class="section">
       <div class="container">
-        <span class="section-label reveal">About Us</span>
-        <h2 class="section-title reveal">Precision Engineering<br>Since <span class="accent">2009</span></h2>
+        <span class="section-label reveal">
+          <span class="lang-en">About Us</span>
+          <span class="lang-zh">關於我們</span>
+        </span>
+        <h2 class="section-title reveal">
+          <span class="lang-en">Precision Engineering<br>Since <span class="accent">2009</span></span>
+          <span class="lang-zh">精密粉體設備機械<br>創立於 <span class="accent">2009</span> 年</span>
+        </h2>
 
         <div class="about-grid">
           <div class="about-text reveal">
-            <p>
-              <strong>Deright Precision Machinery Co., Ltd.</strong> (德瑞精密機械有限公司) is a Taiwan-based
-              manufacturer specialising in advanced powder processing equipment. Since 2011, we have been
-              <em>authorized by Ohkawara Kakohki Co., Ltd. (Japan)</em> to manufacture water-based spray dryer
-              systems — expanding in 2013 to cover large-scale production machines.
-            </p>
-            <p>
-              We also serve as the exclusive distributor for <em>W.A.B. DYNO®-MILL</em> bead mills and
-              TURBULA® 3D mixers from Switzerland, providing a complete powder processing solution from
-              R&amp;D through full-scale production.
-            </p>
-            <p>
-              Our quality policy centres on <strong>teamwork, empathy, and excellence</strong> — constantly
-              improving to create high-performance, high-reliability, low-labour, low-maintenance equipment
-              that exceeds customer expectations.
-            </p>
+            <!-- English About -->
+            <div class="lang-en">
+              <p>
+                <strong>Deright Precision Machinery Co., Ltd.</strong> (德瑞精密機械有限公司) is a Taiwan-based
+                manufacturer specialising in advanced powder processing equipment. Since 2011, we have been
+                <em>authorized by Ohkawara Kakohki Co., Ltd. (Japan)</em> to manufacture water-based spray dryer
+                systems — expanding in 2013 to cover large-scale production machines.
+              </p>
+              <p>
+                We also serve as the exclusive distributor for <em>W.A.B. DYNO®-MILL</em> bead mills and
+                TURBULA® 3D mixers from Switzerland, providing a complete powder processing solution from
+                R&amp;D through full-scale production.
+              </p>
+              <p>
+                Our quality policy centres on <strong>teamwork, empathy, and excellence</strong> — constantly
+                improving to create high-performance, high-reliability, low-labour, low-maintenance equipment
+                that exceeds customer expectations.
+              </p>
+            </div>
+            <!-- Chinese About -->
+            <div class="lang-zh">
+              <p>
+                <strong>德瑞精密機械有限公司</strong>（Deright）是一家總部位於台灣的精密粉體設備製造商。自 2011 年起，我們獲得<strong>日本大川原化工機株式會社</strong>（Ohkawara Kakohki Co., Ltd.）的正式授權，在台製造水系統中小型噴霧乾燥機，並於 2013 年進一步擴大授權製造大型量產機型。
+              </p>
+              <p>
+                同時，德瑞精密機械也是瑞士 <em>W.A.B. DYNO®-MILL</em> 臥式珠磨分散機與 <em>TURBULA®</em> 三度空間立體混合機的台灣獨家代理商，為客戶提供從實驗室研發到工業化量產的完整粉體製造解決方案。
+              </p>
+              <p>
+                我們的品質政策以「<strong>團隊合作、同理心、追求卓越</strong>」為核心，持續精進技術，致力於打造高效能、高可靠度、低維護成本的粉體設備，提供滿足並超越客戶期望的專業品質。
+              </p>
+            </div>
           </div>
 
           <div class="about-stats reveal">
             <div class="stat-card">
               <span class="stat-value">2009</span>
-              <span class="stat-label">Established</span>
+              <span class="stat-label">
+                <span class="lang-en">Established</span>
+                <span class="lang-zh">創立年份</span>
+              </span>
             </div>
             <div class="stat-card">
               <span class="stat-value">ISO 9001</span>
-              <span class="stat-label">Certified (2015)</span>
+              <span class="stat-label">
+                <span class="lang-en">Certified (2015)</span>
+                <span class="lang-zh">國際品質認證 (2015)</span>
+              </span>
             </div>
             <div class="stat-card">
               <span class="stat-value">Japan</span>
-              <span class="stat-label">Ohkawara Kakohki Partner</span>
+              <span class="stat-label">
+                <span class="lang-en">Ohkawara Kakohki Partner</span>
+                <span class="lang-zh">日本大川原技術授權</span>
+              </span>
             </div>
             <div class="stat-card">
               <span class="stat-value">Switzerland</span>
-              <span class="stat-label">W.A.B. DYNO®-MILL Distributor</span>
+              <span class="stat-label">
+                <span class="lang-en">DYNO®-MILL Distributor</span>
+                <span class="lang-zh">瑞士 W.A.B. 獨家代理</span>
+              </span>
             </div>
           </div>
         </div>
@@ -80,205 +120,390 @@
     <!-- ── Products: Spray Dryers ─────────────────────── -->
     <section id="products" class="section">
       <div class="container">
-        <span class="section-label reveal">Products</span>
-        <h2 class="section-title reveal">Spray Dryer <span class="accent">Series</span></h2>
-        <p class="section-desc reveal">Seven specialised series covering everything from laboratory R&amp;D to full-scale industrial production.</p>
+        <span class="section-label reveal">
+          <span class="lang-en">Products</span>
+          <span class="lang-zh">產品系列</span>
+        </span>
+        <h2 class="section-title reveal">
+          <span class="lang-en">Spray Dryer <span class="accent">Series</span></span>
+          <span class="lang-zh">噴霧乾燥機<span class="accent">系列</span></span>
+        </h2>
+        <p class="section-desc reveal">
+          <span class="lang-en">Seven specialised series covering everything from laboratory R&amp;D to full-scale industrial production.</span>
+          <span class="lang-zh">七大專門系列，涵蓋從實驗室研究開發到大規模工業化生產的完整需求。</span>
+        </p>
 
         <div class="product-grid">
 
+          <!-- 1. L/OC Series -->
           <article class="product-card reveal">
             <div class="card-accent accent-white"></div>
             <h3 class="product-name">L/OC Series</h3>
-            <p class="product-type">R&amp;D &amp; Small Production</p>
+            <p class="product-type">
+              <span class="lang-en">R&amp;D &amp; Small Production</span>
+              <span class="lang-zh">研發與小量生產型</span>
+            </p>
             <div class="product-spec">
-              <span class="spec-label">Evaporation</span>
+              <span class="spec-label">
+                <span class="lang-en">Evaporation</span>
+                <span class="lang-zh">水蒸發量</span>
+              </span>
               <span class="spec-value">3 – 42 kg/h</span>
             </div>
             <ul class="product-features">
-              <li>HEPA-filtered heating for high product purity</li>
-              <li>Disc or nozzle atomizer options</li>
-              <li>Easy-clean drying chamber design</li>
+              <span class="lang-en">
+                <li>HEPA-filtered heating for high product purity</li>
+                <li>Disc or nozzle atomizer options</li>
+                <li>Easy-clean drying chamber design</li>
+              </span>
+              <span class="lang-zh">
+                <li>加熱器一律配備 HEPA 過濾器，確保產品極高純度</li>
+                <li>可選配旋轉碟或雙流體噴嘴式霧化器以調整粒徑</li>
+                <li>獨特構造設計，乾燥室極易清洗與維護</li>
+              </span>
             </ul>
             <div class="product-tags">
-              <span class="tag">Food</span><span class="tag">Pharma</span><span class="tag">Ceramics</span>
+              <span class="tag"><span class="lang-en">Food</span><span class="lang-zh">食品</span></span>
+              <span class="tag"><span class="lang-en">Pharma</span><span class="lang-zh">醫藥</span></span>
+              <span class="tag"><span class="lang-en">Ceramics</span><span class="lang-zh">陶瓷</span></span>
             </div>
           </article>
 
+          <!-- 2. FOC Series -->
           <article class="product-card reveal">
             <div class="card-accent accent-white"></div>
             <h3 class="product-name">FOC Series</h3>
-            <p class="product-type">Ceramics &amp; Electronics</p>
+            <p class="product-type">
+              <span class="lang-en">Ceramics &amp; Electronics</span>
+              <span class="lang-zh">陶瓷與電子材料專用</span>
+            </p>
             <div class="product-spec">
-              <span class="spec-label">Evaporation</span>
+              <span class="spec-label">
+                <span class="lang-en">Evaporation</span>
+                <span class="lang-zh">水蒸發量</span>
+              </span>
               <span class="spec-value">5 – 30 kg/h</span>
             </div>
             <ul class="product-features">
-              <li>Chamber lined with ceramic materials</li>
-              <li>Low-Cap design for high recovery rate</li>
-              <li>Compact footprint, reduced installation height</li>
+              <span class="lang-en">
+                <li>Chamber lined with ceramic materials</li>
+                <li>Low-Cap design for high recovery rate</li>
+                <li>Compact footprint, reduced installation height</li>
+              </span>
+              <span class="lang-zh">
+                <li>乾燥室內部可採用陶瓷材質，徹底避免金屬污染</li>
+                <li>專利 Low-Cap 設計，顯著提高乾燥室底部的收集率</li>
+                <li>小巧緊湊的外型設計，節省佔地空間與安裝高度</li>
+              </span>
             </ul>
             <div class="product-tags">
-              <span class="tag">Electronics</span><span class="tag">Ceramics</span>
+              <span class="tag"><span class="lang-en">Electronics</span><span class="lang-zh">電子材料</span></span>
+              <span class="tag"><span class="lang-en">Ceramics</span><span class="lang-zh">精細陶瓷</span></span>
             </div>
           </article>
 
+          <!-- 3. BDP Series -->
           <article class="product-card reveal">
             <div class="card-accent accent-white"></div>
             <h3 class="product-name">BDP Series</h3>
-            <p class="product-type">Biomedical &amp; Electronics</p>
+            <p class="product-type">
+              <span class="lang-en">Biomedical &amp; Electronics</span>
+              <span class="lang-zh">生醫、化成品與電子材料</span>
+            </p>
             <div class="product-spec">
-              <span class="spec-label">Evaporation</span>
+              <span class="spec-label">
+                <span class="lang-en">Evaporation</span>
+                <span class="lang-zh">水蒸發量</span>
+              </span>
               <span class="spec-value">5 – 75 kg/h</span>
             </div>
             <ul class="product-features">
-              <li>Cloth bag drying chamber — zero contamination</li>
-              <li>High bulk density, ideal for sintering</li>
-              <li>Co-developed with TDK Corporation</li>
+              <span class="lang-en">
+                <li>Cloth bag drying chamber — zero contamination</li>
+                <li>High bulk density, ideal for sintering</li>
+                <li>Co-developed with TDK Corporation</li>
+              </span>
+              <span class="lang-zh">
+                <li>配備易拆卸易清洗的布製大袋乾燥室，防交叉污染</li>
+                <li>一點回收可得到高體積鬆裝密度，最適用於燒結陶瓷</li>
+                <li>大川原與日本電子陶瓷大廠 TDK 共同開發之獨特系統</li>
+              </span>
             </ul>
             <div class="product-tags">
-              <span class="tag">Biomedical</span><span class="tag">Ceramics</span><span class="tag">Chemical</span>
+              <span class="tag"><span class="lang-en">Biomedical</span><span class="lang-zh">生物醫藥</span></span>
+              <span class="tag"><span class="lang-en">Ceramics</span><span class="lang-zh">精細陶瓷</span></span>
+              <span class="tag"><span class="lang-en">Chemical</span><span class="lang-zh">化學製品</span></span>
             </div>
           </article>
 
+          <!-- 4. NL Series -->
           <article class="product-card reveal">
             <div class="card-accent accent-pink"></div>
             <h3 class="product-name">NL Series <span class="badge">Twin Jet</span></h3>
-            <p class="product-type">Lab-Scale R&amp;D</p>
+            <p class="product-type">
+              <span class="lang-en">Lab-Scale R&amp;D</span>
+              <span class="lang-zh">微粒子研究開發型</span>
+            </p>
             <div class="product-spec">
-              <span class="spec-label">Evaporation</span>
+              <span class="spec-label">
+                <span class="lang-en">Evaporation</span>
+                <span class="lang-zh">水蒸發量</span>
+              </span>
               <span class="spec-value">1 – 6 kg/h</span>
             </div>
             <ul class="product-features">
-              <li>Patented Twin Jet four-fluid nozzle</li>
-              <li>Ultra-fine particles under 20 μm</li>
-              <li>Compact plug-and-play lab design</li>
+              <span class="lang-en">
+                <li>Patented Twin Jet four-fluid nozzle</li>
+                <li>Ultra-fine particles under 20 μm</li>
+                <li>Compact plug-and-play lab design</li>
+              </span>
+              <span class="lang-zh">
+                <li>專利 Twin Jet 環壓雙重衝擊型四流體噴嘴</li>
+                <li>專用於製造直徑小於 20 微米的超細微粉</li>
+                <li>小巧實驗型設計，隨插即用，操作極其便利</li>
+              </span>
             </ul>
             <div class="product-tags">
-              <span class="tag">Pharma</span><span class="tag">Catalysts</span><span class="tag">Ceramics</span>
+              <span class="tag"><span class="lang-en">Pharma</span><span class="lang-zh">醫藥研發</span></span>
+              <span class="tag"><span class="lang-en">Catalysts</span><span class="lang-zh">催化劑</span></span>
+              <span class="tag"><span class="lang-en">Ceramics</span><span class="lang-zh">先進陶瓷</span></span>
             </div>
           </article>
 
+          <!-- 5. RL Series -->
           <article class="product-card reveal">
             <div class="card-accent accent-pink"></div>
             <h3 class="product-name">RL Series <span class="badge">Twin Jet</span></h3>
-            <p class="product-type">Small-Batch Production</p>
+            <p class="product-type">
+              <span class="lang-en">Small-Batch Production</span>
+              <span class="lang-zh">微粒化少量生產型</span>
+            </p>
             <div class="product-spec">
-              <span class="spec-label">Evaporation</span>
+              <span class="spec-label">
+                <span class="lang-en">Evaporation</span>
+                <span class="lang-zh">水蒸發量</span>
+              </span>
               <span class="spec-value">7 – 40 kg/h</span>
             </div>
             <ul class="product-features">
-              <li>Micro-particles 1 – 10 μm for inorganics</li>
-              <li>Miniaturised drying tower diameter</li>
-              <li>Scalable from NL lab data</li>
+              <span class="lang-en">
+                <li>Micro-particles 1 – 10 μm for inorganics</li>
+                <li>Miniaturised drying tower diameter</li>
+                <li>Scalable from NL lab data</li>
+              </span>
+              <span class="lang-zh">
+                <li>無機材料微粒化性能優異，穩定生產 1~10 微米粉體</li>
+                <li>縮小乾燥塔直徑設計，降低廠房高度與佔地需求</li>
+                <li>實驗參數可直接規模化放大至生產線量產機型</li>
+              </span>
             </ul>
             <div class="product-tags">
-              <span class="tag">Li-Battery</span><span class="tag">Pharma</span><span class="tag">Ceramics</span>
+              <span class="tag"><span class="lang-en">Li-Battery</span><span class="lang-zh">鋰電池材料</span></span>
+              <span class="tag"><span class="lang-en">Pharma</span><span class="lang-zh">生技製藥</span></span>
+              <span class="tag"><span class="lang-en">Ceramics</span><span class="lang-zh">精細陶瓷</span></span>
             </div>
           </article>
 
+          <!-- 6. CL/COC Series -->
           <article class="product-card reveal">
             <div class="card-accent accent-white"></div>
             <h3 class="product-name">CL/COC Series</h3>
-            <p class="product-type">Closed-Loop Organic Solvent</p>
+            <p class="product-type">
+              <span class="lang-en">Closed-Loop Organic Solvent</span>
+              <span class="lang-zh">密閉循環防爆型</span>
+            </p>
             <div class="product-spec">
-              <span class="spec-label">Evaporation</span>
+              <span class="spec-label">
+                <span class="lang-en">Evaporation</span>
+                <span class="lang-zh">溶劑蒸發量</span>
+              </span>
               <span class="spec-value">4 – 28 kg/h</span>
             </div>
             <ul class="product-features">
-              <li>N₂ inert gas drying — safe for flammables</li>
-              <li>Full solvent recovery &amp; reuse</li>
-              <li>Open / closed system flexibility</li>
+              <span class="lang-en">
+                <li>N₂ inert gas drying — safe for flammables</li>
+                <li>Full solvent recovery &amp; reuse</li>
+                <li>Open / closed system flexibility</li>
+              </span>
+              <span class="lang-zh">
+                <li>使用氮氣（N₂）惰性氣體循環，安全乾燥易燃危險物料</li>
+                <li>有機溶劑 100% 完整冷凝回收，重複循環利用</li>
+                <li>具備開放式與密閉式雙重系統，切換靈活度高</li>
+              </span>
             </ul>
             <div class="product-tags">
-              <span class="tag">Chemical</span><span class="tag">Pharma</span><span class="tag">Food</span>
+              <span class="tag"><span class="lang-en">Chemical</span><span class="lang-zh">有機溶劑</span></span>
+              <span class="tag"><span class="lang-en">Pharma</span><span class="lang-zh">原料藥</span></span>
+              <span class="tag"><span class="lang-en">Food</span><span class="lang-zh">食品香料</span></span>
             </div>
           </article>
 
+          <!-- 7. FGA Series -->
           <article class="product-card reveal">
             <div class="card-accent accent-white"></div>
             <h3 class="product-name">FGA Series</h3>
-            <p class="product-type">Spray Dryer + Fluidized Bed</p>
+            <p class="product-type">
+              <span class="lang-en">Spray Dryer + Fluidized Bed</span>
+              <span class="lang-zh">噴霧乾燥 + 內藏流動床</span>
+            </p>
             <div class="product-spec">
-              <span class="spec-label">Evaporation</span>
+              <span class="spec-label">
+                <span class="lang-en">Evaporation</span>
+                <span class="lang-zh">水蒸發量</span>
+              </span>
               <span class="spec-value">5 – 50 kg/h</span>
             </div>
             <ul class="product-features">
-              <li>Controlled granulation 50 – 400 μm</li>
-              <li>Dust-free, instant-dissolving powder</li>
-              <li>Automated production support</li>
+              <span class="lang-en">
+                <li>Controlled granulation 50 – 400 μm</li>
+                <li>Dust-free, instant-dissolving powder</li>
+                <li>Automated production support</li>
+              </span>
+              <span class="lang-zh">
+                <li>兩段式乾燥，可精密控制顆粒粒徑在 50~400 微米</li>
+                <li>顆粒多孔、無微粉粉塵、溶解性佳、流動性優良</li>
+                <li>可實現自動化連續生產，效率高且品質穩定</li>
+              </span>
             </ul>
             <div class="product-tags">
-              <span class="tag">Food</span><span class="tag">Pharma</span><span class="tag">Chemical</span>
+              <span class="tag"><span class="lang-en">Food</span><span class="lang-zh">食品造粒</span></span>
+              <span class="tag"><span class="lang-en">Pharma</span><span class="lang-zh">速溶藥劑</span></span>
+              <span class="tag"><span class="lang-en">Chemical</span><span class="lang-zh">化學造粒</span></span>
             </div>
           </article>
 
         </div>
 
         <!-- ── Bead Mill & Disperser ────────────────────── -->
-        <h2 class="section-title section-title--sub reveal">Bead Mill &amp; <span class="accent">Disperser</span></h2>
-        <p class="section-desc reveal">W.A.B. DYNO®-MILL technology from Switzerland — precision wet grinding and dispersion.</p>
+        <h2 class="section-title section-title--sub reveal">
+          <span class="lang-en">Bead Mill &amp; <span class="accent">Disperser</span></span>
+          <span class="lang-zh">珠磨機 / <span class="accent">分散研磨機</span></span>
+        </h2>
+        <p class="section-desc reveal">
+          <span class="lang-en">W.A.B. DYNO®-MILL technology from Switzerland — precision wet grinding and dispersion.</span>
+          <span class="lang-zh">引進瑞士 W.A.B. DYNO®-MILL 先進濕法研磨與分散技術，提供極致超微米細度。</span>
+        </p>
 
         <div class="product-grid product-grid--2col">
 
+          <!-- Multi LAB -->
           <article class="product-card reveal">
             <div class="card-accent accent-blue"></div>
             <h3 class="product-name">Multi LAB</h3>
-            <p class="product-type">R&amp;D &amp; Small Batch</p>
+            <p class="product-type">
+              <span class="lang-en">R&amp;D &amp; Small Batch</span>
+              <span class="lang-zh">實驗開發與小量生產型</span>
+            </p>
             <div class="product-spec">
-              <span class="spec-label">Chamber</span>
+              <span class="spec-label">
+                <span class="lang-en">Chamber</span>
+                <span class="lang-zh">研磨腔容積</span>
+              </span>
               <span class="spec-value">0.15 – 1.4 L</span>
             </div>
             <ul class="product-features">
-              <li>Dual grinding principle: KD disc or DYNO® accelerator</li>
-              <li>Easy-swap chambers, continuous or batch mode</li>
-              <li>Metal-free ceramic internals for long life</li>
+              <span class="lang-en">
+                <li>Dual grinding principle: KD disc or DYNO® accelerator</li>
+                <li>Easy-swap chambers, continuous or batch mode</li>
+                <li>Metal-free ceramic internals for long life</li>
+              </span>
+              <span class="lang-zh">
+                <li>一機雙研磨原理：可選配傳統 KD 分散盤或專利 DYNO 加速器</li>
+                <li>腔體更換極為便利，支援連續式運轉或批次式研磨</li>
+                <li>採用高品質陶瓷材質內部配件，壽命長且確保無金屬污染</li>
+              </span>
             </ul>
             <div class="product-tags">
-              <span class="tag">R&amp;D</span><span class="tag">Electronics</span><span class="tag">Chemical</span>
+              <span class="tag"><span class="lang-en">R&amp;D</span><span class="lang-zh">學術研發</span></span>
+              <span class="tag"><span class="lang-en">Electronics</span><span class="lang-zh">電子材料</span></span>
+              <span class="tag"><span class="lang-en">Chemical</span><span class="lang-zh">精密化學</span></span>
             </div>
           </article>
 
+          <!-- Dyno-Mill KD -->
           <article class="product-card reveal">
             <div class="card-accent accent-blue"></div>
             <h3 class="product-name">Dyno-Mill KD</h3>
-            <p class="product-type">Production-Scale Horizontal Mill</p>
+            <p class="product-type">
+              <span class="lang-en">Production-Scale Horizontal Mill</span>
+              <span class="lang-zh">臥式工業量產型研磨機</span>
+            </p>
             <div class="product-spec">
-              <span class="spec-label">Chamber</span>
+              <span class="spec-label">
+                <span class="lang-en">Chamber</span>
+                <span class="lang-zh">研磨腔容積</span>
+              </span>
               <span class="spec-value">6 – 60 L</span>
             </div>
             <ul class="product-features">
-              <li>Narrow particle distribution at micron level</li>
-              <li>CE &amp; ATEX certified for hazardous environments</li>
-              <li>Low operating &amp; maintenance costs</li>
+              <span class="lang-en">
+                <li>Narrow particle distribution at micron level</li>
+                <li>CE &amp; ATEX certified for hazardous environments</li>
+                <li>Low operating &amp; maintenance costs</li>
+              </span>
+              <span class="lang-zh">
+                <li>生產效率極其穩定，能獲得窄幅且集中的微米級粒徑分佈</li>
+                <li>通過歐盟 CE 認證與 ATEX 防爆安全規格認證，安全無虞</li>
+                <li>堅固臥式結構，提供低能耗操作及極低的日常維護成本</li>
+              </span>
             </ul>
             <div class="product-tags">
-              <span class="tag">Production</span><span class="tag">Chemical</span><span class="tag">Electronics</span>
+              <span class="tag"><span class="lang-en">Production</span><span class="lang-zh">量產線</span></span>
+              <span class="tag"><span class="lang-en">Chemical</span><span class="lang-zh">精密化學</span></span>
+              <span class="tag"><span class="lang-en">Electronics</span><span class="lang-zh">半導體材料</span></span>
             </div>
           </article>
 
         </div>
 
         <!-- ── 3D Mixer ─────────────────────────────────── -->
-        <h2 class="section-title section-title--sub reveal">3D <span class="accent">Mixer</span></h2>
-        <p class="section-desc reveal">TURBULA® technology — Schatz geometric mixing for unparalleled homogeneity.</p>
+        <h2 class="section-title section-title--sub reveal">
+          <span class="lang-en">3D <span class="accent">Mixer</span></span>
+          <span class="lang-zh">三度空間 <span class="accent">混合機</span></span>
+        </h2>
+        <p class="section-desc reveal">
+          <span class="lang-en">TURBULA® technology — Schatz geometric mixing for unparalleled homogeneity.</span>
+          <span class="lang-zh">引進瑞士 TURBULA® 獨特幾何 Schatz 3D 混合技術，提供無可比擬的均勻度。</span>
+        </p>
 
         <div class="product-grid product-grid--1col">
 
+          <!-- TURBULA T2-F -->
           <article class="product-card product-card--wide reveal">
             <div class="card-accent accent-green"></div>
             <h3 class="product-name">TURBULA® T2-F</h3>
-            <p class="product-type">Tubular 3D Mixer — Up to 2 L</p>
+            <p class="product-type">
+              <span class="lang-en">Tubular 3D Mixer — Up to 2 L</span>
+              <span class="lang-zh">立體幾何混合機 — 最大 2 升</span>
+            </p>
             <div class="product-spec">
-              <span class="spec-label">Principle</span>
-              <span class="spec-value">Schatz Geometry (Rotation + Translation + Inversion)</span>
+              <span class="spec-label">
+                <span class="lang-en">Principle</span>
+                <span class="lang-zh">混合原理</span>
+              </span>
+              <span class="spec-value">
+                <span class="lang-en">Schatz Geometry (Rotation + Translation + Inversion)</span>
+                <span class="lang-zh">Schatz 幾何運動（結合旋轉、平移與反轉）</span>
+              </span>
             </div>
             <ul class="product-features">
-              <li>Mixes in separate sealed containers — zero cross-contamination</li>
-              <li>Dry-dry, dry-wet, wet-wet mixing of any density difference</li>
-              <li>Dust-free, clean-room compatible process</li>
+              <span class="lang-en">
+                <li>Mixes in separate sealed containers — zero cross-contamination</li>
+                <li>Dry-dry, dry-wet, wet-wet mixing of any density difference</li>
+                <li>Dust-free, clean-room compatible process</li>
+              </span>
+              <span class="lang-zh">
+                <li>直接在獨立密閉容器中進行混合，免清洗，實現零交叉污染</li>
+                <li>可混合乾-乾、乾-濕、濕-濕，甚至比重懸殊之不同密度粉體</li>
+                <li>製程完全無粉塵外洩，適用於無塵室等級的高標準作業環境</li>
+              </span>
             </ul>
             <div class="product-tags">
-              <span class="tag">Diamond Tools</span><span class="tag">Cosmetics</span><span class="tag">Medical</span><span class="tag">Food</span><span class="tag">Analytical</span>
+              <span class="tag"><span class="lang-en">Diamond Tools</span><span class="lang-zh">鑽石工具</span></span>
+              <span class="tag"><span class="lang-en">Cosmetics</span><span class="lang-zh">化妝品</span></span>
+              <span class="tag"><span class="lang-en">Medical</span><span class="lang-zh">醫療生技</span></span>
+              <span class="tag"><span class="lang-en">Food</span><span class="lang-zh">食品加工</span></span>
+              <span class="tag"><span class="lang-en">Analytical</span><span class="lang-zh">分析化驗</span></span>
             </div>
           </article>
 
@@ -289,22 +514,76 @@
     <!-- ── Industries ─────────────────────────────────── -->
     <section id="industries" class="section">
       <div class="container">
-        <span class="section-label reveal">Applications</span>
-        <h2 class="section-title reveal">Industries We <span class="accent">Serve</span></h2>
+        <span class="section-label reveal">
+          <span class="lang-en">Applications</span>
+          <span class="lang-zh">應用產業</span>
+        </span>
+        <h2 class="section-title reveal">
+          <span class="lang-en">Industries We <span class="accent">Serve</span></span>
+          <span class="lang-zh">主要服務<span class="accent">產業</span></span>
+        </h2>
 
         <div class="industry-grid">
-          <div class="industry-chip reveal"><span class="chip-icon">⚡</span> Lithium Battery Materials</div>
-          <div class="industry-chip reveal"><span class="chip-icon">📡</span> Electronic Ceramics</div>
-          <div class="industry-chip reveal"><span class="chip-icon">💊</span> Pharmaceuticals</div>
-          <div class="industry-chip reveal"><span class="chip-icon">🧪</span> Chemical Manufacturing</div>
-          <div class="industry-chip reveal"><span class="chip-icon">🍃</span> Food Processing</div>
-          <div class="industry-chip reveal"><span class="chip-icon">🧲</span> Magnetic Materials</div>
-          <div class="industry-chip reveal"><span class="chip-icon">🏛️</span> Government Research</div>
-          <div class="industry-chip reveal"><span class="chip-icon">⚙️</span> Structural Ceramics</div>
-          <div class="industry-chip reveal"><span class="chip-icon">🚗</span> Automotive</div>
-          <div class="industry-chip reveal"><span class="chip-icon">🛢️</span> Petroleum &amp; Resin</div>
-          <div class="industry-chip reveal"><span class="chip-icon">🔬</span> Precision Ceramics</div>
-          <div class="industry-chip reveal"><span class="chip-icon">🏗️</span> Steel &amp; Machinery</div>
+          <div class="industry-chip reveal">
+            <span class="chip-icon">⚡</span>
+            <span class="lang-en">Lithium Battery Materials</span>
+            <span class="lang-zh">鋰電池正負極材料</span>
+          </div>
+          <div class="industry-chip reveal">
+            <span class="chip-icon">📡</span>
+            <span class="lang-en">Electronic Ceramics</span>
+            <span class="lang-zh">電子陶瓷元件</span>
+          </div>
+          <div class="industry-chip reveal">
+            <span class="chip-icon">💊</span>
+            <span class="lang-en">Pharmaceuticals</span>
+            <span class="lang-zh">生技與醫藥製造</span>
+          </div>
+          <div class="industry-chip reveal">
+            <span class="chip-icon">🧪</span>
+            <span class="lang-en">Chemical Manufacturing</span>
+            <span class="lang-zh">精細化學工業</span>
+          </div>
+          <div class="industry-chip reveal">
+            <span class="chip-icon">🍃</span>
+            <span class="lang-en">Food Processing</span>
+            <span class="lang-zh">食品與香料加工</span>
+          </div>
+          <div class="industry-chip reveal">
+            <span class="chip-icon">🧲</span>
+            <span class="lang-en">Magnetic Materials</span>
+            <span class="lang-zh">磁性材料研製</span>
+          </div>
+          <div class="industry-chip reveal">
+            <span class="chip-icon">🏛️</span>
+            <span class="lang-en">Government Research</span>
+            <span class="lang-zh">國家級學術科研機構</span>
+          </div>
+          <div class="industry-chip reveal">
+            <span class="chip-icon">⚙️</span>
+            <span class="lang-en">Structural Ceramics</span>
+            <span class="lang-zh">結構性陶瓷製品</span>
+          </div>
+          <div class="industry-chip reveal">
+            <span class="chip-icon">🚗</span>
+            <span class="lang-en">Automotive</span>
+            <span class="lang-zh">汽車零件與組件</span>
+          </div>
+          <div class="industry-chip reveal">
+            <span class="chip-icon">🛢️</span>
+            <span class="lang-en">Petroleum &amp; Resin</span>
+            <span class="lang-zh">石油與樹脂化工</span>
+          </div>
+          <div class="industry-chip reveal">
+            <span class="chip-icon">🔬</span>
+            <span class="lang-en">Precision Ceramics</span>
+            <span class="lang-zh">精密先進陶瓷</span>
+          </div>
+          <div class="industry-chip reveal">
+            <span class="chip-icon">🏗️</span>
+            <span class="lang-en">Steel &amp; Machinery</span>
+            <span class="lang-zh">鋼鐵機械工程</span>
+          </div>
         </div>
       </div>
     </section>
@@ -312,26 +591,41 @@
     <!-- ── Contact ────────────────────────────────────── -->
     <section id="contact" class="section">
       <div class="container">
-        <span class="section-label reveal">Contact</span>
-        <h2 class="section-title reveal">Get in <span class="accent">Touch</span></h2>
+        <span class="section-label reveal">
+          <span class="lang-en">Contact</span>
+          <span class="lang-zh">聯絡我們</span>
+        </span>
+        <h2 class="section-title reveal">
+          <span class="lang-en">Get in <span class="accent">Touch</span></span>
+          <span class="lang-zh">與我們<span class="accent">聯絡</span></span>
+        </h2>
 
         <div class="contact-grid">
           <div class="contact-card reveal">
             <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <h4>Address</h4>
-            <p>No. 253, Dapu 5th St.,<br>Zhunan Township,<br>Miaoli County 350, Taiwan</p>
-            <p class="contact-zh">350苗栗縣竹南鎮大埔五街253號</p>
+            <h4>
+              <span class="lang-en">Address</span>
+              <span class="lang-zh">公司地址</span>
+            </h4>
+            <p class="lang-en">No. 253, Dapu 5th St.,<br>Zhunan Township,<br>Miaoli County 350, Taiwan</p>
+            <p class="lang-zh">350 苗栗縣竹南鎮大埔五街 253 號</p>
           </div>
 
           <div class="contact-card reveal">
             <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            <h4>Phone</h4>
+            <h4>
+              <span class="lang-en">Phone</span>
+              <span class="lang-zh">聯絡電話</span>
+            </h4>
             <p><a href="tel:+886-37-688-235">(037) 688-235</a></p>
           </div>
 
           <div class="contact-card reveal">
             <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>
-            <h4>Fax</h4>
+            <h4>
+              <span class="lang-en">Fax</span>
+              <span class="lang-zh">傳真號碼</span>
+            </h4>
             <p>(037) 695-467</p>
           </div>
         </div>
@@ -343,7 +637,10 @@
       <div class="container footer-inner">
         <div class="footer-brand">
           <span class="footer-logo"><span class="logo-d">D</span><span class="logo-r">R</span></span>
-          <span class="footer-name">Deright Precision Machinery Co., Ltd.</span>
+          <span class="footer-name">
+            <span class="lang-en">Deright Precision Machinery Co., Ltd.</span>
+            <span class="lang-zh">德瑞精密機械有限公司</span>
+          </span>
         </div>
         <p class="footer-copy">&copy; 2025 Deright Precision Machinery. All rights reserved.</p>
       </div>
@@ -352,5 +649,30 @@
   </main>
 
   <script src="particles.js"></script>
+  
+  <!-- ═══ Language Switcher Script ═══ -->
+  <script>
+    (() => {
+      const toggle = document.getElementById('lang-toggle');
+      
+      const updateToggleText = () => {
+        const isZh = document.documentElement.classList.contains('lang-zh-active');
+        toggle.textContent = isZh ? 'EN' : '繁中';
+      };
+
+      toggle.addEventListener('click', () => {
+        const isZh = document.documentElement.classList.toggle('lang-zh-active');
+        localStorage.setItem('lang-pref-zh', isZh ? 'active' : 'inactive');
+        updateToggleText();
+      });
+
+      // Load initial language preference
+      const savedPref = localStorage.getItem('lang-pref-zh');
+      if (savedPref === 'active' || (!savedPref && navigator.language.startsWith('zh'))) {
+        document.documentElement.classList.add('lang-zh-active');
+      }
+      updateToggleText();
+    })();
+  </script>
 </body>
 </html>

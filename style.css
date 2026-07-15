@@ -29,6 +29,48 @@
 }
 
 /* ═══════════════════════════════════════════════════════
+ *  Language Toggle
+ * ═══════════════════════════════════════════════════════ */
+html:not(.lang-zh-active) .lang-zh {
+  display: none !important;
+}
+html.lang-zh-active .lang-en {
+  display: none !important;
+}
+
+#lang-toggle {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  color: var(--text-bright);
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 8px 16px;
+  border-radius: 50px;
+  transition: background 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+body.hide-default-cursor #lang-toggle {
+  cursor: none !important;
+}
+
+#lang-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--border-hover);
+  transform: translateY(-1px);
+}
+#lang-toggle:active {
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════════
  *  Reset & Base
  * ═══════════════════════════════════════════════════════ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
