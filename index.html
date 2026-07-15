@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Deright Precision Machinery — Professional powder processing solutions. Spray dryers, bead mills, and 3D mixers. ISO 9001:2015 certified. Authorized Ohkawara Kakohki manufacturer.">
+  <title>DR | Deright Precision Machinery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══ Fixed particle canvas (z-index 0, always behind) ═══ -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ═══ Fixed hero overlay (fades on scroll) ═══ -->
+  <div id="hero-overlay">
+    <p id="subtitle">SPRAY DRYER EQUIPMENT</p>
+    <div id="scroll-hint">
+      <span>Scroll to explore</span>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path d="M9 3L9 15M4 10L9 15L14 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ═══ Scrollable content ═══ -->
+  <main id="content">
+
+    <!-- ── About ─────────────────────────────────────── -->
+    <section id="about" class="section">
+      <div class="container">
+        <span class="section-label reveal">About Us</span>
+        <h2 class="section-title reveal">Precision Engineering<br>Since <span class="accent">2009</span></h2>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              <strong>Deright Precision Machinery Co., Ltd.</strong> (德瑞精密機械有限公司) is a Taiwan-based
+              manufacturer specialising in advanced powder processing equipment. Since 2011, we have been
+              <em>authorized by Ohkawara Kakohki Co., Ltd. (Japan)</em> to manufacture water-based spray dryer
+              systems — expanding in 2013 to cover large-scale production machines.
+            </p>
+            <p>
+              We also serve as the exclusive distributor for <em>W.A.B. DYNO®-MILL</em> bead mills and
+              TURBULA® 3D mixers from Switzerland, providing a complete powder processing solution from
+              R&amp;D through full-scale production.
+            </p>
+            <p>
+              Our quality policy centres on <strong>teamwork, empathy, and excellence</strong> — constantly
+              improving to create high-performance, high-reliability, low-labour, low-maintenance equipment
+              that exceeds customer expectations.
+            </p>
+          </div>
+
+          <div class="about-stats reveal">
+            <div class="stat-card">
+              <span class="stat-value">2009</span>
+              <span class="stat-label">Established</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">ISO 9001</span>
+              <span class="stat-label">Certified (2015)</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">Japan</span>
+              <span class="stat-label">Ohkawara Kakohki Partner</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">Switzerland</span>
+              <span class="stat-label">W.A.B. DYNO®-MILL Distributor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Products: Spray Dryers ─────────────────────── -->
+    <section id="products" class="section">
+      <div class="container">
+        <span class="section-label reveal">Products</span>
+        <h2 class="section-title reveal">Spray Dryer <span class="accent">Series</span></h2>
+        <p class="section-desc reveal">Seven specialised series covering everything from laboratory R&amp;D to full-scale industrial production.</p>
+
+        <div class="product-grid">
+
+          <article class="product-card reveal">
+            <div class="card-accent accent-white"></div>
+            <h3 class="product-name">L/OC Series</h3>
+            <p class="product-type">R&amp;D &amp; Small Production</p>
+            <div class="product-spec">
+              <span class="spec-label">Evaporation</span>
+              <span class="spec-value">3 – 42 kg/h</span>
+            </div>
+            <ul class="product-features">
+              <li>HEPA-filtered heating for high product purity</li>
+              <li>Disc or nozzle atomizer options</li>
+              <li>Easy-clean drying chamber design</li>
+            </ul>
+            <div class="product-tags">
+              <span class="tag">Food</span><span class="tag">Pharma</span><span class="tag">Ceramics</span>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="card-accent accent-white"></div>
+            <h3 class="product-name">FOC Series</h3>
+            <p class="product-type">Ceramics &amp; Electronics</p>
+            <div class="product-spec">
+              <span class="spec-label">Evaporation</span>
+              <span class="spec-value">5 – 30 kg/h</span>
+            </div>
+            <ul class="product-features">
+              <li>Chamber lined with ceramic materials</li>
+              <li>Low-Cap design for high recovery rate</li>
+              <li>Compact footprint, reduced installation height</li>
+            </ul>
+            <div class="product-tags">
+              <span class="tag">Electronics</span><span class="tag">Ceramics</span>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="card-accent accent-white"></div>
+            <h3 class="product-name">BDP Series</h3>
+            <p class="product-type">Biomedical &amp; Electronics</p>
+            <div class="product-spec">
+              <span class="spec-label">Evaporation</span>
+              <span class="spec-value">5 – 75 kg/h</span>
+            </div>
+            <ul class="product-features">
+              <li>Cloth bag drying chamber — zero contamination</li>
+              <li>High bulk density, ideal for sintering</li>
+              <li>Co-developed with TDK Corporation</li>
+            </ul>
+            <div class="product-tags">
+              <span class="tag">Biomedical</span><span class="tag">Ceramics</span><span class="tag">Chemical</span>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="card-accent accent-pink"></div>
+            <h3 class="product-name">NL Series <span class="badge">Twin Jet</span></h3>
+            <p class="product-type">Lab-Scale R&amp;D</p>
+            <div class="product-spec">
+              <span class="spec-label">Evaporation</span>
+              <span class="spec-value">1 – 6 kg/h</span>
+            </div>
+            <ul class="product-features">
+              <li>Patented Twin Jet four-fluid nozzle</li>
+              <li>Ultra-fine particles under 20 μm</li>
+              <li>Compact plug-and-play lab design</li>
+            </ul>
+            <div class="product-tags">
+              <span class="tag">Pharma</span><span class="tag">Catalysts</span><span class="tag">Ceramics</span>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="card-accent accent-pink"></div>
+            <h3 class="product-name">RL Series <span class="badge">Twin Jet</span></h3>
+            <p class="product-type">Small-Batch Production</p>
+            <div class="product-spec">
+              <span class="spec-label">Evaporation</span>
+              <span class="spec-value">7 – 40 kg/h</span>
+            </div>
+            <ul class="product-features">
+              <li>Micro-particles 1 – 10 μm for inorganics</li>
+              <li>Miniaturised drying tower diameter</li>
+              <li>Scalable from NL lab data</li>
+            </ul>
+            <div class="product-tags">
+              <span class="tag">Li-Battery</span><span class="tag">Pharma</span><span class="tag">Ceramics</span>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="card-accent accent-white"></div>
+            <h3 class="product-name">CL/COC Series</h3>
+            <p class="product-type">Closed-Loop Organic Solvent</p>
+            <div class="product-spec">
+              <span class="spec-label">Evaporation</span>
+              <span class="spec-value">4 – 28 kg/h</span>
+            </div>
+            <ul class="product-features">
+              <li>N₂ inert gas drying — safe for flammables</li>
+              <li>Full solvent recovery &amp; reuse</li>
+              <li>Open / closed system flexibility</li>
+            </ul>
+            <div class="product-tags">
+              <span class="tag">Chemical</span><span class="tag">Pharma</span><span class="tag">Food</span>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="card-accent accent-white"></div>
+            <h3 class="product-name">FGA Series</h3>
+            <p class="product-type">Spray Dryer + Fluidized Bed</p>
+            <div class="product-spec">
+              <span class="spec-label">Evaporation</span>
+              <span class="spec-value">5 – 50 kg/h</span>
+            </div>
+            <ul class="product-features">
+              <li>Controlled granulation 50 – 400 μm</li>
+              <li>Dust-free, instant-dissolving powder</li>
+              <li>Automated production support</li>
+            </ul>
+            <div class="product-tags">
+              <span class="tag">Food</span><span class="tag">Pharma</span><span class="tag">Chemical</span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- ── Bead Mill & Disperser ────────────────────── -->
+        <h2 class="section-title section-title--sub reveal">Bead Mill &amp; <span class="accent">Disperser</span></h2>
+        <p class="section-desc reveal">W.A.B. DYNO®-MILL technology from Switzerland — precision wet grinding and dispersion.</p>
+
+        <div class="product-grid product-grid--2col">
+
+          <article class="product-card reveal">
+            <div class="card-accent accent-blue"></div>
+            <h3 class="product-name">Multi LAB</h3>
+            <p class="product-type">R&amp;D &amp; Small Batch</p>
+            <div class="product-spec">
+              <span class="spec-label">Chamber</span>
+              <span class="spec-value">0.15 – 1.4 L</span>
+            </div>
+            <ul class="product-features">
+              <li>Dual grinding principle: KD disc or DYNO® accelerator</li>
+              <li>Easy-swap chambers, continuous or batch mode</li>
+              <li>Metal-free ceramic internals for long life</li>
+            </ul>
+            <div class="product-tags">
+              <span class="tag">R&amp;D</span><span class="tag">Electronics</span><span class="tag">Chemical</span>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="card-accent accent-blue"></div>
+            <h3 class="product-name">Dyno-Mill KD</h3>
+            <p class="product-type">Production-Scale Horizontal Mill</p>
+            <div class="product-spec">
+              <span class="spec-label">Chamber</span>
+              <span class="spec-value">6 – 60 L</span>
+            </div>
+            <ul class="product-features">
+              <li>Narrow particle distribution at micron level</li>
+              <li>CE &amp; ATEX certified for hazardous environments</li>
+              <li>Low operating &amp; maintenance costs</li>
+            </ul>
+            <div class="product-tags">
+              <span class="tag">Production</span><span class="tag">Chemical</span><span class="tag">Electronics</span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- ── 3D Mixer ─────────────────────────────────── -->
+        <h2 class="section-title section-title--sub reveal">3D <span class="accent">Mixer</span></h2>
+        <p class="section-desc reveal">TURBULA® technology — Schatz geometric mixing for unparalleled homogeneity.</p>
+
+        <div class="product-grid product-grid--1col">
+
+          <article class="product-card product-card--wide reveal">
+            <div class="card-accent accent-green"></div>
+            <h3 class="product-name">TURBULA® T2-F</h3>
+            <p class="product-type">Tubular 3D Mixer — Up to 2 L</p>
+            <div class="product-spec">
+              <span class="spec-label">Principle</span>
+              <span class="spec-value">Schatz Geometry (Rotation + Translation + Inversion)</span>
+            </div>
+            <ul class="product-features">
+              <li>Mixes in separate sealed containers — zero cross-contamination</li>
+              <li>Dry-dry, dry-wet, wet-wet mixing of any density difference</li>
+              <li>Dust-free, clean-room compatible process</li>
+            </ul>
+            <div class="product-tags">
+              <span class="tag">Diamond Tools</span><span class="tag">Cosmetics</span><span class="tag">Medical</span><span class="tag">Food</span><span class="tag">Analytical</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Industries ─────────────────────────────────── -->
+    <section id="industries" class="section">
+      <div class="container">
+        <span class="section-label reveal">Applications</span>
+        <h2 class="section-title reveal">Industries We <span class="accent">Serve</span></h2>
+
+        <div class="industry-grid">
+          <div class="industry-chip reveal"><span class="chip-icon">⚡</span> Lithium Battery Materials</div>
+          <div class="industry-chip reveal"><span class="chip-icon">📡</span> Electronic Ceramics</div>
+          <div class="industry-chip reveal"><span class="chip-icon">💊</span> Pharmaceuticals</div>
+          <div class="industry-chip reveal"><span class="chip-icon">🧪</span> Chemical Manufacturing</div>
+          <div class="industry-chip reveal"><span class="chip-icon">🍃</span> Food Processing</div>
+          <div class="industry-chip reveal"><span class="chip-icon">🧲</span> Magnetic Materials</div>
+          <div class="industry-chip reveal"><span class="chip-icon">🏛️</span> Government Research</div>
+          <div class="industry-chip reveal"><span class="chip-icon">⚙️</span> Structural Ceramics</div>
+          <div class="industry-chip reveal"><span class="chip-icon">🚗</span> Automotive</div>
+          <div class="industry-chip reveal"><span class="chip-icon">🛢️</span> Petroleum &amp; Resin</div>
+          <div class="industry-chip reveal"><span class="chip-icon">🔬</span> Precision Ceramics</div>
+          <div class="industry-chip reveal"><span class="chip-icon">🏗️</span> Steel &amp; Machinery</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact ────────────────────────────────────── -->
+    <section id="contact" class="section">
+      <div class="container">
+        <span class="section-label reveal">Contact</span>
+        <h2 class="section-title reveal">Get in <span class="accent">Touch</span></h2>
+
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <h4>Address</h4>
+            <p>No. 253, Dapu 5th St.,<br>Zhunan Township,<br>Miaoli County 350, Taiwan</p>
+            <p class="contact-zh">350苗栗縣竹南鎮大埔五街253號</p>
+          </div>
+
+          <div class="contact-card reveal">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <h4>Phone</h4>
+            <p><a href="tel:+886-37-688-235">(037) 688-235</a></p>
+          </div>
+
+          <div class="contact-card reveal">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>
+            <h4>Fax</h4>
+            <p>(037) 695-467</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Footer ─────────────────────────────────────── -->
+    <footer id="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo"><span class="logo-d">D</span><span class="logo-r">R</span></span>
+          <span class="footer-name">Deright Precision Machinery Co., Ltd.</span>
+        </div>
+        <p class="footer-copy">&copy; 2025 Deright Precision Machinery. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="particles.js"></script>
+</body>
+</html>
