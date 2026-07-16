@@ -255,8 +255,8 @@
     /* ── Scroll-spread: effective multiplier ── */
     const spread = 1 + scrollProgress * SPREAD_FACTOR;
 
-    /* ── Global particle alpha (dim when spread) ── */
-    const globalDim = 1 - scrollProgress * 0.45;   // dim to 55% when fully spread
+    /* ── Global particle alpha (slightly dim when spread, stay visible behind sections) ── */
+    const globalDim = 1 - scrollProgress * 0.25;   // dim to 75% when fully spread
 
     const n = particles.length;
 
@@ -266,11 +266,14 @@
       const active = elapsed - p.delay;
       const sMul = active < 0 ? 0 : Math.min(1, active * 0.35);
 
-      /* Floating */
-      const fx = Math.sin(t * p.fSpd + p.fSeed) * p.fAx;
-      const fy = Math.cos(t * p.fSpd * 0.7 + p.fSeed + 1.5) * p.fAy;
+      /* Idle floating drift – gentle breathing when stationary */
+      const driftT = elapsed * p.fSpd;
+      const fx = Math.sin(driftT + p.fSeed) * p.fAx * 2.2
+               + Math.sin(driftT * 0.37 + p.fSeed * 2.3) * p.fAx * 1.1;
+      const fy = Math.cos(driftT * 0.7 + p.fSeed + 1.5) * p.fAy * 2.2
+               + Math.cos(driftT * 0.23 + p.fSeed * 1.7) * p.fAy * 1.1;
 
-      /* Spread target: offset from center × spread */
+      /* Spread target: offset from center × spread, plus drift */
       const eTx = centerX + (p.tx - centerX) * spread + fx;
       const eTy = centerY + (p.ty - centerY) * spread + fy;
 
