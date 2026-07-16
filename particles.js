@@ -306,8 +306,13 @@
       for (let i = 0; i < n; i++) {
         if (particles[i].batch !== b) continue;
         const p = particles[i];
-        ctx.moveTo(p.x + p.size, p.y);
-        ctx.arc(p.x, p.y, p.size, 0, 6.2832);
+        
+        // Gentle breathing animation (size scale pulse)
+        const pulse = Math.sin(elapsed * p.fSpd * 2.2 + p.fSeed) * (p.size * 0.35);
+        const currentSize = Math.max(0.4, p.size + pulse);
+        
+        ctx.moveTo(p.x + currentSize, p.y);
+        ctx.arc(p.x, p.y, currentSize, 0, 6.2832);
       }
       ctx.fill();
     }
