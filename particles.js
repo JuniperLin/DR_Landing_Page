@@ -172,7 +172,7 @@
       tx: p.x, ty: p.y,
       vx: 0, vy: 0,
       color:    p.color,
-      size:     0.5 + Math.random() * 1.4,
+      size:     2.5 + Math.random() * 1.4,
       fSeed:    Math.random() * 6.2832,
       fSpd:     0.15 + Math.random() * 0.35,
       fAx:      0.25 + Math.random() * 0.6,
