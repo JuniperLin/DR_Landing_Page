@@ -172,7 +172,7 @@
       tx: p.x, ty: p.y,
       vx: 0, vy: 0,
       color:    p.color,
-      size:     1.8 + Math.random() * 1.4,
+      size:     1.2 + Math.random() * 1.4,
       fSeed:    Math.random() * 6.2832,
       fSpd:     0.15 + Math.random() * 0.35,
       fAx:      0.25 + Math.random() * 0.6,
@@ -266,12 +266,11 @@
       const active = elapsed - p.delay;
       const sMul = active < 0 ? 0 : Math.min(1, active * 0.35);
 
-      /* Idle floating drift – gentle breathing when stationary */
-      const driftT = elapsed * p.fSpd;
-      const fx = Math.sin(driftT + p.fSeed) * p.fAx * 4.0
-               + Math.sin(driftT * 0.31 + p.fSeed * 2.3) * p.fAx * 2.0;
-      const fy = Math.cos(driftT * 0.7 + p.fSeed + 1.5) * p.fAy * 4.0
-               + Math.cos(driftT * 0.19 + p.fSeed * 1.7) * p.fAy * 2.0;
+      /* Idle floating drift – gentle breathing when stationary, scales up when spread */
+      const driftRange = 6.0 + scrollProgress * 30.0;
+      const driftT = elapsed * p.fSpd * 0.45;
+      const fx = (Math.sin(driftT + p.fSeed) * p.fAx + Math.sin(driftT * 0.31 + p.fSeed * 2.3) * 0.5) * driftRange;
+      const fy = (Math.cos(driftT * 0.7 + p.fSeed + 1.5) * p.fAy + Math.cos(driftT * 0.19 + p.fSeed * 1.7) * 0.5) * driftRange;
 
       /* Spread target: offset from center × spread, plus drift */
       const eTx = centerX + (p.tx - centerX) * spread + fx;
